@@ -46,3 +46,38 @@ Follow the steps outlined below to import your custom dictionary into Yomitan:
 not contain non-ASCII characters (including Japanese characters). This problem is due to the fact that the EPWING
 library used does not support such paths. Attempts to convert dictionaries stored in paths containing illegal characters
 may cause the conversion process to fail.
+
+## Building
+> **Note**: Currently, building from source only works on Linux and MacOS.
+
+1. Download the latest version of [go](https://go.dev/dl/) if you haven't already.
+    Be sure to follow the [installation steps](https://go.dev/doc/install)
+    as well, to ensure `go` is added to your path.
+1. Run the following commands:
+
+    ```bash
+    git clone https://github.com/themoeway/yomitan-import.git
+    cd scripts
+    ./build_linux.sh
+    ```
+1. (Optional) If you want to build for Windows,
+    install [mingw-w64](https://www.mingw-w64.org/downloads/)
+    and run the following command under the `scripts` folder:
+
+    ```
+    ./build_windows.sh
+    ```
+
+## Building Dictionaries
+If you have successfully built the `yomichan` binary (`yomichan-gtk` does not need to be successfully built),
+then you should be able to run the `./build_dicts.sh` script, in order to build
+all JMdict-related dictionaries.
+
+Note that you will have to set your `$GOPATH` environment variable, i.e. with:
+```bash
+export GOPATH=$HOME/go
+```
+You will also have to add the GOPATH's `bin` folder to your `$PATH` environment variable, i.e. with:
+```bash
+export PATH=$PATH:$GOPATH/bin
+```

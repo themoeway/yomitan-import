@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 mkdir -p dst
 mkdir -p yomitan-import
 
-go build github.com/themoeway/yomitan-import/tree/master/yomichan
-go build github.com/themoeway/yomitan-import/tree/master/yomichan-gtk
+go build github.com/themoeway/yomitan-import/tree/master/yomitan
+go build github.com/themoeway/yomitan-import/tree/master/yomitan-gtk
 
 mv yomitan yomitan-import
 mv yomitan-gtk yomitan-import

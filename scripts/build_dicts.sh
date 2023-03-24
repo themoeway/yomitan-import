@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
-go get github.com/themoeway/yomitan-import/tree/master/yomitan
+go install github.com/themoeway/yomitan-import/tree/master/yomitan
 
 mkdir -p src
 mkdir -p dst
 
-function refresh_source () {
+refresh_source() {
     NOW=$(date '+%s')
     YESTERDAY=$((NOW - 86400)) # 86,400 seconds in 24 hours
     if [ ! -f "src/$1" ]; then
